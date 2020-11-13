@@ -1,0 +1,163 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(
+      45deg,
+      rgba(254, 246, 210, 0.53) 0%,
+      rgba(254, 246, 210, 0.53) 14.286%,
+      rgba(221, 240, 216, 0.53) 14.286%,
+      rgba(221, 240, 216, 0.53) 28.572%,
+      rgba(188, 233, 223, 0.53) 28.572%,
+      rgba(188, 233, 223, 0.53) 42.858%,
+      rgba(156, 227, 229, 0.53) 42.858%,
+      rgba(156, 227, 229, 0.53) 57.144%,
+      rgba(123, 220, 235, 0.53) 57.144%,
+      rgba(123, 220, 235, 0.53) 71.42999999999999%,
+      rgba(90, 214, 242, 0.53) 71.43%,
+      rgba(90, 214, 242, 0.53) 85.71600000000001%,
+      rgba(57, 207, 248, 0.53) 85.716%,
+      rgba(57, 207, 248, 0.53) 100.002%
+    ),
+    linear-gradient(
+      135deg,
+      rgb(246, 99, 200) 0%,
+      rgb(246, 99, 200) 12.5%,
+      rgb(223, 98, 196) 12.5%,
+      rgb(223, 98, 196) 25%,
+      rgb(199, 97, 192) 25%,
+      rgb(199, 97, 192) 37.5%,
+      rgb(176, 96, 188) 37.5%,
+      rgb(176, 96, 188) 50%,
+      rgb(152, 95, 184) 50%,
+      rgb(152, 95, 184) 62.5%,
+      rgb(129, 94, 180) 62.5%,
+      rgb(129, 94, 180) 75%,
+      rgb(105, 93, 176) 75%,
+      rgb(105, 93, 176) 87.5%,
+      rgb(82, 92, 172) 87.5%,
+      rgb(82, 92, 172) 100%
+    );
+}
+i,
+svg {
+  pointer-events: none;
+}
+button:focus {
+  outline: none;
+}
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+}
+.kick-pad {
+  background-color: #9ad3bc;
+}
+.kick-pad.active {
+  background-color: #5ac59a;
+}
+.snare-pad {
+  background-color: #f4abc4;
+}
+.snare-pad.active {
+  background-color: #f3729f;
+}
+.hihat-pad {
+  background-color: #ff9a76;
+}
+.hihat-pad.active {
+  background-color: #ff7948;
+}
+.sequencer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.kick-track,
+.hihat-track,
+.snare-track {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  margin-top: 3.5rem;
+}
+.kick-track {
+  margin-top: 0;
+}
+.kick,
+.snare,
+.hihat {
+  display: flex;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 0rem 2rem;
+}
+.controls button {
+  padding: 1rem;
+  border: none;
+  background: rgb(87, 87, 87);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.pad {
+  transition: all 0.5s ease;
+}
+.play {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  background: rgb(87, 87, 87);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.mute.active {
+  background: grey;
+}
+.tempo {
+  margin: 2rem;
+  width: 36%;
+}
+.tempo-slider {
+  padding: 0.1rem;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background-color: rgb(80, 80, 80);
+  border-radius: 1rem;
+}
+.tempo p {
+  font-size: 1.5rem;
+  margin: 0;
+  text-align: center;
+}
+select {
+  padding: 1rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
